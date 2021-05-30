@@ -1,609 +1,676 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> 
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Web development project</title>
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Web development project</title>
 </head>
+
 <body>
 
-    <!-- Sprite -->
-   <svg style="display: none;">
+  <!-- Sprite -->
+  <svg style="display: none;">
     <symbol id="facebook" viewBox="0 0 24 24">
-        <g>
-           <path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/>
-        </g>
+      <g>
+        <path
+          d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z" />
+      </g>
     </symbol>
     <symbol id="twitter" viewBox="-21 -81 681.33464 681">
-        <g>
-           <path d="m200.964844 515.292969c241.050781 0 372.871094-199.703125 372.871094-372.871094 0-5.671875-.117188-11.320313-.371094-16.9375 25.585937-18.5 47.824218-41.585937 65.371094-67.863281-23.480469 10.441406-48.753907 17.460937-75.257813 20.636718 27.054687-16.230468 47.828125-41.894531 57.625-72.488281-25.320313 15.011719-53.363281 25.917969-83.214844 31.808594-23.914062-25.472656-57.964843-41.402344-95.664062-41.402344-72.367188 0-131.058594 58.6875-131.058594 131.03125 0 10.289063 1.152344 20.289063 3.398437 29.882813-108.917968-5.480469-205.503906-57.625-270.132812-136.921875-11.25 19.363281-17.742188 41.863281-17.742188 65.871093 0 45.460938 23.136719 85.605469 58.316407 109.082032-21.5-.660156-41.695313-6.5625-59.351563-16.386719-.019531.550781-.019531 1.085937-.019531 1.671875 0 63.46875 45.171875 116.460938 105.144531 128.46875-11.015625 2.996094-22.605468 4.609375-34.558594 4.609375-8.429687 0-16.648437-.828125-24.632812-2.363281 16.683594 52.070312 65.066406 89.960937 122.425781 91.023437-44.855469 35.15625-101.359375 56.097657-162.769531 56.097657-10.5625 0-21.003906-.605469-31.2617188-1.816407 57.9999998 37.175781 126.8710938 58.871094 200.8867188 58.871094"/>
-        </g>
+      <g>
+        <path
+          d="m200.964844 515.292969c241.050781 0 372.871094-199.703125 372.871094-372.871094 0-5.671875-.117188-11.320313-.371094-16.9375 25.585937-18.5 47.824218-41.585937 65.371094-67.863281-23.480469 10.441406-48.753907 17.460937-75.257813 20.636718 27.054687-16.230468 47.828125-41.894531 57.625-72.488281-25.320313 15.011719-53.363281 25.917969-83.214844 31.808594-23.914062-25.472656-57.964843-41.402344-95.664062-41.402344-72.367188 0-131.058594 58.6875-131.058594 131.03125 0 10.289063 1.152344 20.289063 3.398437 29.882813-108.917968-5.480469-205.503906-57.625-270.132812-136.921875-11.25 19.363281-17.742188 41.863281-17.742188 65.871093 0 45.460938 23.136719 85.605469 58.316407 109.082032-21.5-.660156-41.695313-6.5625-59.351563-16.386719-.019531.550781-.019531 1.085937-.019531 1.671875 0 63.46875 45.171875 116.460938 105.144531 128.46875-11.015625 2.996094-22.605468 4.609375-34.558594 4.609375-8.429687 0-16.648437-.828125-24.632812-2.363281 16.683594 52.070312 65.066406 89.960937 122.425781 91.023437-44.855469 35.15625-101.359375 56.097657-162.769531 56.097657-10.5625 0-21.003906-.605469-31.2617188-1.816407 57.9999998 37.175781 126.8710938 58.871094 200.8867188 58.871094" />
+      </g>
     </symbol>
     <symbol id="chat" viewBox="0 0 512.012 512.012">
-        <g>
-            <path d="m333.201 115.038c-28.905-59.021-89.37-98.042-157.193-98.042-97.047 0-176 78.505-176 175 0 26.224 5.63 51.359 16.742 74.794l-16.451 82.265c-2.094 10.472 7.144 19.728 17.618 17.656l83.279-16.465c11.213 5.319 22.813 9.364 34.732 12.151-26.717-126.541 69.199-245.321 197.273-247.359z"/><path d="m495.266 394.79c2.874-6.061 5.373-12.237 7.511-18.514h-.549c37.448-109.917-41.305-225.441-157.567-231.066-.002-.006-.003-.012-.005-.018-100.036-4.61-183.148 75.486-183.148 174.804 0 96.414 78.361 174.857 174.743 174.997 26.143-.035 51.201-5.663 74.568-16.747 91.207 18.032 84.094 16.75 86.189 16.75 9.479 0 16.56-8.686 14.709-17.941z"/>
-        </g>
+      <g>
+        <path
+          d="m333.201 115.038c-28.905-59.021-89.37-98.042-157.193-98.042-97.047 0-176 78.505-176 175 0 26.224 5.63 51.359 16.742 74.794l-16.451 82.265c-2.094 10.472 7.144 19.728 17.618 17.656l83.279-16.465c11.213 5.319 22.813 9.364 34.732 12.151-26.717-126.541 69.199-245.321 197.273-247.359z" />
+        <path
+          d="m495.266 394.79c2.874-6.061 5.373-12.237 7.511-18.514h-.549c37.448-109.917-41.305-225.441-157.567-231.066-.002-.006-.003-.012-.005-.018-100.036-4.61-183.148 75.486-183.148 174.804 0 96.414 78.361 174.857 174.743 174.997 26.143-.035 51.201-5.663 74.568-16.747 91.207 18.032 84.094 16.75 86.189 16.75 9.479 0 16.56-8.686 14.709-17.941z" />
+      </g>
     </symbol>
     <symbol id="basket" viewBox="0 0 24 24">
-        <g>
-            <path d="m16.354 23.17c.02-.006.039-.014.059-.021 12.215-4.853 8.836-23.149-4.413-23.149-6.649 0-12 5.42-12 12 0 8.327 8.434 14.269 16.354 11.17zm-11.073-3.111c.852-1.432 3.609-5.472 8.315-6.866.984 2.509 1.674 5.436 1.742 8.755-3.566 1.199-7.327.392-10.057-1.889zm11.532 1.263c-.131-3.189-.782-6.017-1.71-8.467 2.082-.325 4.492-.108 7.225.987-.581 3.261-2.666 6.002-5.515 7.48zm5.672-9.031c-3.01-1.131-5.663-1.272-7.959-.834-.355-.8-.728-1.569-1.123-2.277 3.523-1.407 5.605-3.122 6.537-4.03 1.645 1.904 2.622 4.369 2.545 7.141zm-3.61-8.209c-.848.807-2.845 2.437-6.26 3.77-1.674-2.648-3.464-4.516-4.598-5.562 3.628-1.494 7.812-.856 10.858 1.792zm-12.292-1.059c.856.753 2.735 2.561 4.548 5.357-2.49.802-5.612 1.391-9.409 1.474.604-2.894 2.408-5.346 4.861-6.831zm-5.051 8.337c4.25-.069 7.69-.74 10.409-1.648.376.659.733 1.377 1.076 2.123-4.735 1.508-7.694 5.401-8.827 7.159-1.828-2.04-2.836-4.702-2.658-7.634z"/>
-        </g>
+      <g>
+        <path
+          d="m16.354 23.17c.02-.006.039-.014.059-.021 12.215-4.853 8.836-23.149-4.413-23.149-6.649 0-12 5.42-12 12 0 8.327 8.434 14.269 16.354 11.17zm-11.073-3.111c.852-1.432 3.609-5.472 8.315-6.866.984 2.509 1.674 5.436 1.742 8.755-3.566 1.199-7.327.392-10.057-1.889zm11.532 1.263c-.131-3.189-.782-6.017-1.71-8.467 2.082-.325 4.492-.108 7.225.987-.581 3.261-2.666 6.002-5.515 7.48zm5.672-9.031c-3.01-1.131-5.663-1.272-7.959-.834-.355-.8-.728-1.569-1.123-2.277 3.523-1.407 5.605-3.122 6.537-4.03 1.645 1.904 2.622 4.369 2.545 7.141zm-3.61-8.209c-.848.807-2.845 2.437-6.26 3.77-1.674-2.648-3.464-4.516-4.598-5.562 3.628-1.494 7.812-.856 10.858 1.792zm-12.292-1.059c.856.753 2.735 2.561 4.548 5.357-2.49.802-5.612 1.391-9.409 1.474.604-2.894 2.408-5.346 4.861-6.831zm-5.051 8.337c4.25-.069 7.69-.74 10.409-1.648.376.659.733 1.377 1.076 2.123-4.735 1.508-7.694 5.401-8.827 7.159-1.828-2.04-2.836-4.702-2.658-7.634z" />
+      </g>
     </symbol>
     <symbol id="iphone" viewBox="0 0 85 95">
-        <g>
-            <path d="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA+CAQAAADU1hCIAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfkBgYNODWi3rLDAAADKUlEQVRYw+3YT2hcVRTH8c9kMmmsjWm0klYJVURwV1xYxaLu/AMi6EZqMXQhdmWpCdigdKUIuqiIulGkUFDwX2OgCOJG1+KfIN0VdFGrgVoT/zVjkjkuZqJp572Z9978gYK/u5h595w737nn3nvuvQ847FtVtdxlzWnPy63PREfla0PZYSX7HcMhn6sa2GBZUDIolKwYssU5FVXXb/CoKdvlbcPe8mR25HfC/oT6PT4y52NzPnQD3jXr4QS/e4WwNTswhEpC/asbgvaEMSGcTPyFP4XbswNrIsWyw04TdhoHYyZS/M7lAQ761dW+UG2yXPCTNSWhbELFD1btcGWT34BR1LIDl3F39oB0qkGjmPTLRTM0u2qGvGNzniarqWOYVeeF27I6D1jD9g5wlXyxKRbIDvQ/MF37PFSsYVUUmDTPCGEAFYt5Zmkx4HNCOER/gHXcwcZTz4GHhfDiv889Bk4JYWZDTU+BFwez58A6buqS2orf8m3AWYEzQnipqb4ihDu6DZxJ7F1dR51I2Jg7AiaNXWG1B9Zxk93BDbb1mPIC3nTcVcod82rtevh446C40OHpfL2stNst/mh8rnYnoP5uF9JZT3kNJx0wlOcOkahS+5DCtBAOdKmPmZbFPiEc7R+Qx1ogT5g31m3g+j7RjKyntj3dB66P5bNNwCVhdy+AyWPZ4w24eSx7fsSoj+XL/QNyUAhH+gf8L7ClfgGZFEI5P7D99pSs45YtWsvfsCiQ94s1u4xuT5cPsIyfO/iFlXxTZ9BfRhyxVLCvoZzvpQlnunI4yrEON+NTy0qJ9mVnXTBku5GUHg54IN/iWmnzYmjcnW5s6ZHrxVA9tW1LsQ2ba4TsK9el+JS6mUu/EcKXqsIZmxJ9upi8HxUW7cK4+dS7U05gq8VwH94wjwXTuD97L4oBf8dNje+3NJ67oBXh2kTLbiFMu9leVeHBRK+y8/mu3CFckWJ7ZcPSfq9FJHJduU+n/ne4xwdO+cTeVI9bRWqMEvW0sOQR24wYvaQMgy2g0mQdsdVdfhRms+MoOdUmT1bVWtrPuiYPkE1e933BpL3gWGqeStQ/gTT53d22hmUAAAAASUVORK5CYII=" />
-        </g>
+      <g>
+        <path
+          d="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA+CAQAAADU1hCIAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfkBgYNODWi3rLDAAADKUlEQVRYw+3YT2hcVRTH8c9kMmmsjWm0klYJVURwV1xYxaLu/AMi6EZqMXQhdmWpCdigdKUIuqiIulGkUFDwX2OgCOJG1+KfIN0VdFGrgVoT/zVjkjkuZqJp572Z9978gYK/u5h595w737nn3nvuvQ847FtVtdxlzWnPy63PREfla0PZYSX7HcMhn6sa2GBZUDIolKwYssU5FVXXb/CoKdvlbcPe8mR25HfC/oT6PT4y52NzPnQD3jXr4QS/e4WwNTswhEpC/asbgvaEMSGcTPyFP4XbswNrIsWyw04TdhoHYyZS/M7lAQ761dW+UG2yXPCTNSWhbELFD1btcGWT34BR1LIDl3F39oB0qkGjmPTLRTM0u2qGvGNzniarqWOYVeeF27I6D1jD9g5wlXyxKRbIDvQ/MF37PFSsYVUUmDTPCGEAFYt5Zmkx4HNCOER/gHXcwcZTz4GHhfDiv889Bk4JYWZDTU+BFwez58A6buqS2orf8m3AWYEzQnipqb4ihDu6DZxJ7F1dR51I2Jg7AiaNXWG1B9Zxk93BDbb1mPIC3nTcVcod82rtevh446C40OHpfL2stNst/mh8rnYnoP5uF9JZT3kNJx0wlOcOkahS+5DCtBAOdKmPmZbFPiEc7R+Qx1ogT5g31m3g+j7RjKyntj3dB66P5bNNwCVhdy+AyWPZ4w24eSx7fsSoj+XL/QNyUAhH+gf8L7ClfgGZFEI5P7D99pSs45YtWsvfsCiQ94s1u4xuT5cPsIyfO/iFlXxTZ9BfRhyxVLCvoZzvpQlnunI4yrEON+NTy0qJ9mVnXTBku5GUHg54IN/iWmnzYmjcnW5s6ZHrxVA9tW1LsQ2ba4TsK9el+JS6mUu/EcKXqsIZmxJ9upi8HxUW7cK4+dS7U05gq8VwH94wjwXTuD97L4oBf8dNje+3NJ67oBXh2kTLbiFMu9leVeHBRK+y8/mu3CFckWJ7ZcPSfq9FJHJduU+n/ne4xwdO+cTeVI9bRWqMEvW0sOQR24wYvaQMgy2g0mQdsdVdfhRms+MoOdUmT1bVWtrPuiYPkE1e933BpL3gWGqeStQ/gTT53d22hmUAAAAASUVORK5CYII=" />
+      </g>
     </symbol>
-    <symbol id="map"  viewBox="0 0 512 512">
-        <g>
-            <path d="m256.001 512c-11.176 0-21.184-5.796-26.77-15.505-.059-.102-.116-.205-.173-.308l-126.962-232.386c-30.306-55.471-29.437-121.312 2.325-176.124 31.073-53.624 86.265-86.385 147.639-87.637 2.622-.054 5.258-.054 7.878 0 61.375 1.252 116.567 34.013 147.641 87.637 31.762 54.812 32.631 120.652 2.325 176.124l-126.962 232.386c-.057.103-.114.206-.173.308-5.585 9.708-15.592 15.505-26.768 15.505zm-.001-480c-1.099 0-2.195.011-3.289.033-50.099 1.022-95.185 27.821-120.604 71.688-26.107 45.055-26.829 99.162-1.93 144.736l125.823 230.3 125.822-230.299c24.899-45.575 24.178-99.682-1.931-144.737-25.419-43.866-70.505-70.666-120.604-71.688-1.091-.022-2.188-.033-3.287-.033z"/><path d="m256 232c-39.701 0-72-32.299-72-72s32.299-72 72-72 72 32.299 72 72-32.298 72-72 72zm0-112c-22.056 0-40 17.944-40 40s17.944 40 40 40 40-17.944 40-40-17.944-40-40-40z"/>
-        </g>
+    <symbol id="map" viewBox="0 0 512 512">
+      <g>
+        <path
+          d="m256.001 512c-11.176 0-21.184-5.796-26.77-15.505-.059-.102-.116-.205-.173-.308l-126.962-232.386c-30.306-55.471-29.437-121.312 2.325-176.124 31.073-53.624 86.265-86.385 147.639-87.637 2.622-.054 5.258-.054 7.878 0 61.375 1.252 116.567 34.013 147.641 87.637 31.762 54.812 32.631 120.652 2.325 176.124l-126.962 232.386c-.057.103-.114.206-.173.308-5.585 9.708-15.592 15.505-26.768 15.505zm-.001-480c-1.099 0-2.195.011-3.289.033-50.099 1.022-95.185 27.821-120.604 71.688-26.107 45.055-26.829 99.162-1.93 144.736l125.823 230.3 125.822-230.299c24.899-45.575 24.178-99.682-1.931-144.737-25.419-43.866-70.505-70.666-120.604-71.688-1.091-.022-2.188-.033-3.287-.033z" />
+        <path
+          d="m256 232c-39.701 0-72-32.299-72-72s32.299-72 72-72 72 32.299 72 72-32.298 72-72 72zm0-112c-22.056 0-40 17.944-40 40s17.944 40 40 40 40-17.944 40-40-17.944-40-40-40z" />
+      </g>
     </symbol>
     <symbol id="call" viewBox="0 0 512.021 512.021">
-        <g>
-            <path d="m367.988 512.021c-16.528 0-32.916-2.922-48.941-8.744-70.598-25.646-136.128-67.416-189.508-120.795s-95.15-118.91-120.795-189.508c-8.241-22.688-10.673-46.108-7.226-69.612 3.229-22.016 11.757-43.389 24.663-61.809 12.963-18.501 30.245-33.889 49.977-44.5 21.042-11.315 44.009-17.053 68.265-17.053 7.544 0 14.064 5.271 15.645 12.647l25.114 117.199c1.137 5.307-.494 10.829-4.331 14.667l-42.913 42.912c40.482 80.486 106.17 146.174 186.656 186.656l42.912-42.913c3.838-3.837 9.361-5.466 14.667-4.331l117.199 25.114c7.377 1.581 12.647 8.101 12.647 15.645 0 24.256-5.738 47.224-17.054 68.266-10.611 19.732-25.999 37.014-44.5 49.977-18.419 12.906-39.792 21.434-61.809 24.663-6.899 1.013-13.797 1.518-20.668 1.519zm-236.349-479.321c-31.995 3.532-60.393 20.302-79.251 47.217-21.206 30.265-26.151 67.49-13.567 102.132 49.304 135.726 155.425 241.847 291.151 291.151 34.641 12.584 71.866 7.64 102.132-13.567 26.915-18.858 43.685-47.256 47.217-79.251l-95.341-20.43-44.816 44.816c-4.769 4.769-12.015 6.036-18.117 3.168-95.19-44.72-172.242-121.772-216.962-216.962-2.867-6.103-1.601-13.349 3.168-18.117l44.816-44.816z"/>
-        </g>
+      <g>
+        <path
+          d="m367.988 512.021c-16.528 0-32.916-2.922-48.941-8.744-70.598-25.646-136.128-67.416-189.508-120.795s-95.15-118.91-120.795-189.508c-8.241-22.688-10.673-46.108-7.226-69.612 3.229-22.016 11.757-43.389 24.663-61.809 12.963-18.501 30.245-33.889 49.977-44.5 21.042-11.315 44.009-17.053 68.265-17.053 7.544 0 14.064 5.271 15.645 12.647l25.114 117.199c1.137 5.307-.494 10.829-4.331 14.667l-42.913 42.912c40.482 80.486 106.17 146.174 186.656 186.656l42.912-42.913c3.838-3.837 9.361-5.466 14.667-4.331l117.199 25.114c7.377 1.581 12.647 8.101 12.647 15.645 0 24.256-5.738 47.224-17.054 68.266-10.611 19.732-25.999 37.014-44.5 49.977-18.419 12.906-39.792 21.434-61.809 24.663-6.899 1.013-13.797 1.518-20.668 1.519zm-236.349-479.321c-31.995 3.532-60.393 20.302-79.251 47.217-21.206 30.265-26.151 67.49-13.567 102.132 49.304 135.726 155.425 241.847 291.151 291.151 34.641 12.584 71.866 7.64 102.132-13.567 26.915-18.858 43.685-47.256 47.217-79.251l-95.341-20.43-44.816 44.816c-4.769 4.769-12.015 6.036-18.117 3.168-95.19-44.72-172.242-121.772-216.962-216.962-2.867-6.103-1.601-13.349 3.168-18.117l44.816-44.816z" />
+      </g>
     </symbol>
     <symbol id="email" viewBox="0 0 479.058 479.058">
-        <g>
-            <path d="m434.146 59.882h-389.234c-24.766 0-44.912 20.146-44.912 44.912v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159l-200.355 173.649-200.356-173.649c1.769-.736 3.704-1.159 5.738-1.159zm0 299.411h-389.234c-8.26 0-14.971-6.71-14.971-14.971v-251.648l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"/>
-        </g>
+      <g>
+        <path
+          d="m434.146 59.882h-389.234c-24.766 0-44.912 20.146-44.912 44.912v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159l-200.355 173.649-200.356-173.649c1.769-.736 3.704-1.159 5.738-1.159zm0 299.411h-389.234c-8.26 0-14.971-6.71-14.971-14.971v-251.648l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z" />
+      </g>
     </symbol>
- </svg>
+  </svg>
 
 
 
-    
-    <!-- ============ Header ======= -->
-    <header class="header">
-        <div class="container">
-            <div class="header__inner">
-                <div class="header__logo">Your Logo</div>
-                <nav class="nav">
-                    <a class="nav__link" href="#">Home</a>
-                    <a class="nav__link" href="#">About</a>
-                    <a class="nav__link" href="#">Servicing</a>
-                    <a class="nav__link" href="#">Portfolio</a>
-                    <a class="nav__link" href="#">Blog</a>
-                    <a class="nav__link" href="#">Contact us</a>
-                    
-                    <a class="nav__link" href="#">
-                        <i class="fas fa-search"></i>
-                    </a>
-                </nav>
-            </div>
-        </div>
-    </header>
 
-    <!--============== Intro ============-->
-    <div class="intro">
-        <div class="container">
-            <div class="intro__inner">
-                <h1 class="intro__title">Web development project</h1>
-                <h2 class="intro__suptitle">Very suitable to support all web development projects</h2>
-
-                <div class="btn">
-                    <a class="btn__left" href="#">OUR SERVICES</a>
-                    <a class="btn__right" href="#">HIRE IS NOW</a>
-                </div>
-            </div>
-
-            <div class="intro__arrow">
-                <a href="#" ><div class="section__buck arrow" ></div></a>
-            </div>
-            
-        </div>
-    </div>   <!-- /Intro -->
-
-    <!--============== About ============-->
-    <section class="section">
-        <div class="container">
-
-            <div class="section__header">
-                <h2 class="section__title">About Us</h2>
-                <div class="section__text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-                </div>
-            </div>
-            <div class="features">
-                <div class="features__inner">
-                    <div class="features__item">
-                        <img class="features__icon" src="images/features1.png"alt="">
-                        <div class="features__title">Awesome Icons</div>
-                        <div class="features__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</div>
-                    </div>
-                    <div class="features__item">
-                        <img class="features__icon" src="images/features2.png"alt="">
-                        <div class="features__title">One Page </div>
-                        <div class="features__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</div>
-                    </div>
-                    <div class="features__item">
-                        <img class="features__icon" src="images/features3.png"alt="">
-                        <div class="features__title">Fully Responsive</div>
-                        <div class="features__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</div>
-                    </div>
-                </div> 
-            </div><!-- /.container -->
-    </section><!-- /.About -->
-
-    <!--============== Services ============-->
-<div class="section__services">
+  <!-- ============ Header ======= -->
+  <header class="header">
     <div class="container">
-        <div class="section__header">
-            <h2 class="section__title">Our Services</h2>
-            <div class="section__text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-            </div>
+      <div class="header__inner">
+        <div class="header__logo">Your Logo</div>
+        <nav class="nav">
+          <a class="nav__link" href="#">Home</a>
+          <a class="nav__link" href="#">About</a>
+          <a class="nav__link" href="#">Servicing</a>
+          <a class="nav__link" href="#">Portfolio</a>
+          <a class="nav__link" href="#">Blog</a>
+          <a class="nav__link" href="#">Contact us</a>
+
+          <a class="nav__link" href="#">
+            <i class="fas fa-search"></i>
+          </a>
+        </nav>
+        <div class="menu__burger" id="burger">
+          <img class="menu__burger-icon" src="images/menu.svg" alt="icon">
         </div>
-        <div class="services">
-            <div class="services__inner">
-                <div class="services__item">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="services__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg>
-                    <div class="services__title">Research</div>
-                    <div class="services__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.</div>
-                    <a class="btn__services" href="#">READ MORE</a>
-                </div>
-                <div class="services__item">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="services__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg>
-                    <div class="services__title">Research</div>
-                    <div class="services__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.</div>
-                    <a class="btn__services" href="#">READ MORE</a>
-                </div>
-                <div class="services__item">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="services__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg>
-                    <div class="services__title">Research</div>
-                    <div class="services__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.</div>
-                    <a class="btn__services" href="#">READ MORE</a>
-                </div>
+      </div>
+    </div>
+  </header>
+
+  <!--============== Intro ============-->
+  <div class="intro">
+    <div class="container">
+      <div class="intro__inner">
+        <h1 class="intro__title">Web development project</h1>
+        <h2 class="intro__suptitle">Very suitable to support all web development projects</h2>
+
+        <div class="btn">
+          <a class="intro__btn" href="#">OUR SERVICES</a>
+          <a class="intro__btn" href="#">HIRE IS NOW</a>
+        </div>
+      </div>
+
+      <div class="intro__arrow">
+        <a href="#">
+          <div class="section__buck arrow"></div>
+        </a>
+      </div>
+
+    </div>
+  </div> <!-- /Intro -->
+
+  <!--============== About ============-->
+  <section class="section">
+    <div class="container">
+
+      <div class="section__header">
+        <h2 class="section__title">About Us</h2>
+        <div class="section__text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam,</p>
+        </div>
+      </div>
+      <div class="features">
+        <div class="features__inner">
+          <div class="features__item">
+            <img class="features__icon" src="images/features1.png" alt="">
+            <div class="features__title">Awesome Icons</div>
+            <div class="features__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
             </div>
-            <div class="services__inner">
-                <div class="services__item">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="services__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg>
-                    <div class="services__title">Research</div>
-                    <div class="services__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.</div>
-                    <a class="btn__services" href="#">READ MORE</a>
-                </div>
-                <div class="services__item">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="services__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg>
-                    <div class="services__title">Research</div>
-                    <div class="services__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.</div>
-                    <a class="btn__services" href="#">READ MORE</a>
-                </div>
-                <div class="services__item">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="services__icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg>
-                    <div class="services__title">Research</div>
-                    <div class="services__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum iti atque corrupti quos.</div>
-                    <a class="btn__services" href="#">READ MORE</a>
-                </div>
+          </div>
+          <div class="features__item">
+            <img class="features__icon" src="images/features2.png" alt="">
+            <div class="features__title">One Page </div>
+            <div class="features__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
             </div>
-  
-        </div><!-- /.features -->
+          </div>
+          <div class="features__item">
+            <img class="features__icon" src="images/features3.png" alt="">
+            <div class="features__title">Fully Responsive</div>
+            <div class="features__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            </div>
+          </div>
+        </div>
+      </div><!-- /.container -->
+  </section><!-- /.About -->
+
+  <!--============== Services ============-->
+  <div class="section__services">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Our Services</h2>
+        <div class="section__text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam,</p>
+        </div>
+      </div>
+      <div class="services">
+        <div class="services__inner">
+          <div class="services__item">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="services__icon"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <path fill="currentColor"
+                d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z">
+              </path>
+            </svg>
+            <div class="services__title">Research</div>
+            <div class="services__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+              praesentium voluptatum iti atque corrupti quos.</div>
+            <a class="btn__services" href="#">READ MORE</a>
+          </div>
+          <div class="services__item">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="services__icon"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <path fill="currentColor"
+                d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z">
+              </path>
+            </svg>
+            <div class="services__title">Research</div>
+            <div class="services__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+              praesentium voluptatum iti atque corrupti quos.</div>
+            <a class="btn__services" href="#">READ MORE</a>
+          </div>
+          <div class="services__item">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="services__icon"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <path fill="currentColor"
+                d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z">
+              </path>
+            </svg>
+            <div class="services__title">Research</div>
+            <div class="services__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+              praesentium voluptatum iti atque corrupti quos.</div>
+            <a class="btn__services" href="#">READ MORE</a>
+          </div>
+        </div>
+        <div class="services__inner">
+          <div class="services__item">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="services__icon"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <path fill="currentColor"
+                d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z">
+              </path>
+            </svg>
+            <div class="services__title">Research</div>
+            <div class="services__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+              praesentium voluptatum iti atque corrupti quos.</div>
+            <a class="btn__services" href="#">READ MORE</a>
+          </div>
+          <div class="services__item">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="services__icon"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <path fill="currentColor"
+                d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z">
+              </path>
+            </svg>
+            <div class="services__title">Research</div>
+            <div class="services__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+              praesentium voluptatum iti atque corrupti quos.</div>
+            <a class="btn__services" href="#">READ MORE</a>
+          </div>
+          <div class="services__item">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="mobile-alt" class="services__icon"
+              role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <path fill="currentColor"
+                d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z">
+              </path>
+            </svg>
+            <div class="services__title">Research</div>
+            <div class="services__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+              praesentium voluptatum iti atque corrupti quos.</div>
+            <a class="btn__services" href="#">READ MORE</a>
+          </div>
+        </div>
+
+      </div><!-- /.features -->
     </div> <!-- /.container -->
-</div>
+  </div>
 
 
 
 
-<!--============== Works ============-->
+  <!--============== Works ============-->
 
-<div class="works">
+  <div class="works">
     <div class="container">
-        <div class="section__header">
-            <h2 class="section__title">Latest Works</h2>
-            <div class="section__text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-            </div>
-            <div class="works__btns">
-                <a class="works__btn__item works__btn__min" href="#">ALL</a>
-                <a class="works__btn__item" href="#">WEB DESIGN</a>
-                <a class="works__btn__item" href="#">UI/UX DESIGN</a>
-                <a class="works__btn__item" href="#">MOCKUPS</a>
-            </div>
+      <div class="section__header">
+        <h2 class="section__title">Latest Works</h2>
+        <div class="section__text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam,</p>
         </div>
-        <div class="works__card">
-            <div class="works__item">
-                <div class="works__inner">
-                    <div class="works__img">
-                        <img src="images/works/works1.jpg" alt="">
-                    </div>
-                    <div class="works__img__content">
-                        <div class="works__title">Hand Watch</div>
-                        <div class="works__suptitle">ui/ux design</div>
-                    </div>
-                </div>
-            </div>
-            <div class="works__item">
-                <div class="works__inner">
-                    <div class="works__img">
-                        <img src="images/works/works2.jpg" alt="">
-                    </div>
-                    <div class="works__img__content">
-                        <div class="works__title">Hand Watch</div>
-                        <div class="works__suptitle">ui/ux design</div>
-                    </div>
-                </div>
-            </div>
-            <div class="works__item">
-                <div class="works__inner">
-                    <div class="works__img">
-                        <img src="images/works/works3.jpg" alt="">
-                    </div>
-                    <div class="works__img__content">
-                        <div class="works__title">Hand Watch</div>
-                        <div class="works__suptitle">ui/ux design</div>
-                    </div>
-                </div>
-            </div>
-            <div class="works__item">
-                <div class="works__inner">
-                    <div class="works__img">
-                        <img src="images/works/works4.jpg" alt="">
-                    </div>
-                    <div class="works__img__content">
-                        <div class="works__title">Hand Watch</div>
-                        <div class="works__suptitle">ui/ux design</div>
-                    </div>
-                </div>
-            </div>
-            <div class="works__item">
-                <div class="works__inner">
-                    <div class="works__img">
-                        <img src="images/works/works5.jpg" alt="">
-                    </div>
-                    <div class="works__img__content">
-                        <div class="works__title">Hand Watch</div>
-                        <div class="works__suptitle">ui/ux design</div>
-                    </div>
-                </div>
-            </div>
-            <div class="works__item">
-                <div class="works__inner">
-                    <div class="works__img">
-                        <img src="images/works/works6.jpg" alt="">
-                    </div>
-                    <div class="works__img__content">
-                        <div class="works__title">Hand Watch</div>
-                        <div class="works__suptitle">ui/ux design</div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- /.works__card -->
-        
         <div class="works__btns">
-            <a class="works__btn__bottom" href="#">VEIW ALL</a>
+          <a class="works__btn__item works__btn__min" href="#">ALL</a>
+          <a class="works__btn__item" href="#">WEB DESIGN</a>
+          <a class="works__btn__item" href="#">UI/UX DESIGN</a>
+          <a class="works__btn__item" href="#">MOCKUPS</a>
         </div>
-        
-        
+      </div>
+      <div class="works__card">
+        <div class="works__item">
+          <div class="works__inner">
+            <div class="works__img">
+              <img src="images/works/works1.jpg" alt="">
+            </div>
+            <div class="works__img__content">
+              <div class="works__title">Hand Watch</div>
+              <div class="works__suptitle">ui/ux design</div>
+            </div>
+          </div>
+        </div>
+        <div class="works__item">
+          <div class="works__inner">
+            <div class="works__img">
+              <img src="images/works/works2.jpg" alt="">
+            </div>
+            <div class="works__img__content">
+              <div class="works__title">Hand Watch</div>
+              <div class="works__suptitle">ui/ux design</div>
+            </div>
+          </div>
+        </div>
+        <div class="works__item">
+          <div class="works__inner">
+            <div class="works__img">
+              <img src="images/works/works3.jpg" alt="">
+            </div>
+            <div class="works__img__content">
+              <div class="works__title">Hand Watch</div>
+              <div class="works__suptitle">ui/ux design</div>
+            </div>
+          </div>
+        </div>
+        <div class="works__item">
+          <div class="works__inner">
+            <div class="works__img">
+              <img src="images/works/works4.jpg" alt="">
+            </div>
+            <div class="works__img__content">
+              <div class="works__title">Hand Watch</div>
+              <div class="works__suptitle">ui/ux design</div>
+            </div>
+          </div>
+        </div>
+        <div class="works__item">
+          <div class="works__inner">
+            <div class="works__img">
+              <img src="images/works/works5.jpg" alt="">
+            </div>
+            <div class="works__img__content">
+              <div class="works__title">Hand Watch</div>
+              <div class="works__suptitle">ui/ux design</div>
+            </div>
+          </div>
+        </div>
+        <div class="works__item">
+          <div class="works__inner">
+            <div class="works__img">
+              <img src="images/works/works6.jpg" alt="">
+            </div>
+            <div class="works__img__content">
+              <div class="works__title">Hand Watch</div>
+              <div class="works__suptitle">ui/ux design</div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.works__card -->
+
+      <div class="works__btns">
+        <a class="works__btn__bottom" href="#">VEIW ALL</a>
+      </div>
+
+
     </div><!-- /.container -->
-</div><!-- /.works -->
+  </div><!-- /.works -->
 
 
-<!--============== Pricing Plan ============-->
-<div class="pricing">
+  <!--============== Pricing Plan ============-->
+  <div class="pricing">
     <div class="container">
-        <div class="section__header">
-            <h2 class="section__title">Pricing Plan</h2>
-            <div class="section__text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-            </div>
+      <div class="section__header">
+        <h2 class="section__title">Pricing Plan</h2>
+        <div class="section__text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam,</p>
         </div>
-        <div class="pricing__inner">
-            <div class="pricing__item">
-                <div class="pricing__header">
-                    <div class="pricing__title">Free Trail</div>
-                    <div class="pricing__price">
-                        <sup>$</sup> 00 <sub>per mounth</sub>
-                    </div>
-                </div>
-                <div class="pricing__content">
-                    <div class="pricing__content__item">30 Free Trail</div>
-                    <div class="pricing__content__item">5 Free Projects</div>
-                    <div class="pricing__content__item">PHP 5 Enabled</div>
-                    <div class="pricing__content__item">24/7 Suports</div>
-                </div>
-                <div class="pricing__button">
-                    <a class="pricing__btn" href="#">Order Now</a>
-                </div>
+      </div>
+      <div class="pricing__inner">
+        <div class="pricing__item">
+          <div class="pricing__header">
+            <div class="pricing__title">Free Trail</div>
+            <div class="pricing__price">
+              <sup>$</sup> 00 <sub>per mounth</sub>
             </div>
-            <div class="pricing__item">
-                <div class="pricing__header">
-                    <div class="pricing__title">Free Trail</div>
-                    <div class="pricing__price">
-                        <sup>$</sup> 00 <sub>per mounth</sub>
-                    </div>
-                </div>
-                <div class="pricing__content">
-                    <div class="pricing__content__item">30 Free Trail</div>
-                    <div class="pricing__content__item">5 Free Projects</div>
-                    <div class="pricing__content__item">PHP 5 Enabled</div>
-                    <div class="pricing__content__item">24/7 Suports</div>
-                </div>
-                <div class="pricing__button">
-                    <a class="pricing__btn" href="#">Order Now</a>
-                </div>
+          </div>
+          <div class="pricing__content">
+            <div class="pricing__content__item">30 Free Trail</div>
+            <div class="pricing__content__item">5 Free Projects</div>
+            <div class="pricing__content__item">PHP 5 Enabled</div>
+            <div class="pricing__content__item">24/7 Suports</div>
+          </div>
+          <div class="pricing__button">
+            <a class="pricing__btn" href="#">Order Now</a>
+          </div>
+        </div>
+        <div class="pricing__item">
+          <div class="pricing__header">
+            <div class="pricing__title">Free Trail</div>
+            <div class="pricing__price">
+              <sup>$</sup> 00 <sub>per mounth</sub>
             </div>
-            <div class="pricing__item">
-                <div class="pricing__header">
-                    <div class="pricing__title">Free Trail</div>
-                    <div class="pricing__price">
-                        <sup>$</sup> 00 <sub>per mounth</sub>
-                    </div>
-                </div>
-                <div class="pricing__content">
-                    <div class="pricing__content__item">30 Free Trail</div>
-                    <div class="pricing__content__item">5 Free Projects</div>
-                    <div class="pricing__content__item">PHP 5 Enabled</div>
-                    <div class="pricing__content__item">24/7 Suports</div>
-                </div>
-                <div class="pricing__button">
-                    <a class="pricing__btn" href="#">Order Now</a>
-                </div>
+          </div>
+          <div class="pricing__content">
+            <div class="pricing__content__item">30 Free Trail</div>
+            <div class="pricing__content__item">5 Free Projects</div>
+            <div class="pricing__content__item">PHP 5 Enabled</div>
+            <div class="pricing__content__item">24/7 Suports</div>
+          </div>
+          <div class="pricing__button">
+            <a class="pricing__btn" href="#">Order Now</a>
+          </div>
+        </div>
+        <div class="pricing__item">
+          <div class="pricing__header">
+            <div class="pricing__title">Free Trail</div>
+            <div class="pricing__price">
+              <sup>$</sup> 00 <sub>per mounth</sub>
             </div>
-            
-        </div><!-- /.pricing__inner -->
+          </div>
+          <div class="pricing__content">
+            <div class="pricing__content__item">30 Free Trail</div>
+            <div class="pricing__content__item">5 Free Projects</div>
+            <div class="pricing__content__item">PHP 5 Enabled</div>
+            <div class="pricing__content__item">24/7 Suports</div>
+          </div>
+          <div class="pricing__button">
+            <a class="pricing__btn" href="#">Order Now</a>
+          </div>
+        </div>
+
+      </div><!-- /.pricing__inner -->
     </div><!-- /.container -->
-</div><!-- /.pricing -->
+  </div><!-- /.pricing -->
 
 
 
 
 
-<!--============== TEAM ============-->
-<div class="team">
+  <!--============== TEAM ============-->
+  <div class="team">
     <div class="container">
-        <div class="section__header">
-            <h2 class="section__title">Pricing Plan</h2>
-            <div class="section__text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-            </div>
+      <div class="section__header">
+        <h2 class="section__title">Pricing Plan</h2>
+        <div class="section__text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam,</p>
         </div>
-        
-        <div class="team__inner">
-            <div class="team__item">
-                <img class="team__photo" src="images\team\teammate1.jpg " alt="">
-                <div class="team__name">Ruth Woods</div>
-                <div class="team__prof">Founder, CEO</div>
-                
-                <!-- social -->
-                <div class="social">
-                    <a class="social__item" href="#" target="blank">
-                        <svg class="social__icon">
-                            <use xlink:href="#facebook"></use>
-                        </svg>
-                    </a>
-                    <a class="social__item" href="#" target="blank">
-                        <svg class="social__icon">
-                            <use xlink:href="#twitter"></use>
-                        </svg>
-                    </a>
-                    <a class="social__item" href="#" target="blank">
-                        <svg class="social__icon">
-                            <use xlink:href="#chat"></use>
-                        </svg>
-                    </a>
-                    <a class="social__item" href="#" target="blank">
-                        <svg class="social__icon">
-                            <use xlink:href="#basket"></use>
-                        </svg>
-                    </a>
-                </div><!-- /.social -->
-            </div>
-            <div class="team__item">
-                <img class="team__photo" src="images\team\teammate2.jpg " alt="">
-                <div class="team__name">Ruth Woods</div>
-                <div class="team__prof">Founder, CEO</div>
-                
-                <!-- social -->
-                <div class="social">
-                    <a class="social__item" href="#" target="blank">
-                        <svg class="social__icon">
-                            <use xlink:href="#facebook"></use>
-                        </svg>
-                    </a>
-                    <a class="social__item" href="#" target="blank">
-                        <svg class="social__icon">
-                            <use xlink:href="#twitter"></use>
-                        </svg>
-                    </a>
-                    <a class="social__item" href="#" target="blank">
-                        <svg class="social__icon">
-                            <use xlink:href="#chat"></use>
-                        </svg>
-                    </a>
-                    <a class="social__item" href="#" target="blank">
-                        <svg class="social__icon">
-                            <use xlink:href="#basket"></use>
-                        </svg>
-                    </a>
-                </div><!-- /.social -->
-            </div>
-            <div class="team__item">
-                <img class="team__photo" src="images\team\teammate3.jpg " alt="">
-                <div class="team__name">Ruth Woods</div>
-                <div class="team__prof">Founder, CEO</div>
-                
-                <!-- social -->
-                <div class="social">
-                    <a class="social__item" href="#" target="blank">
-                        <svg class="social__icon">
-                            <use xlink:href="#facebook"></use>
-                        </svg>
-                    </a>
-                    <a class="social__item" href="#" target="blank">
-                        <svg class="social__icon">
-                            <use xlink:href="#twitter"></use>
-                        </svg>
-                    </a>
-                    <a class="social__item" href="#" target="blank">
-                        <svg class="social__icon">
-                            <use xlink:href="#chat"></use>
-                        </svg>
-                    </a>
-                    <a class="social__item" href="#" target="blank">
-                        <svg class="social__icon">
-                            <use xlink:href="#basket"></use>
-                        </svg>
-                    </a>
-                </div><!-- /.social -->
-            </div>
-        </div><!-- /.team__inner -->
-        <div class="points">
-            <div class="points__blue"></div>
-            <div class="points__green"></div>
-            <div class="points__green"></div>
+      </div>
+
+      <div class="team__inner">
+        <div class="team__item">
+          <img class="team__photo" src="images\team\teammate1.jpg " alt="">
+          <div class="team__name">Ruth Woods</div>
+          <div class="team__prof">Founder, CEO</div>
+
+          <!-- social -->
+          <div class="social">
+            <a class="social__item" href="#" target="blank">
+              <svg class="social__icon">
+                <use xlink:href="#facebook"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="blank">
+              <svg class="social__icon">
+                <use xlink:href="#twitter"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="blank">
+              <svg class="social__icon">
+                <use xlink:href="#chat"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="blank">
+              <svg class="social__icon">
+                <use xlink:href="#basket"></use>
+              </svg>
+            </a>
+          </div><!-- /.social -->
         </div>
+        <div class="team__item">
+          <img class="team__photo" src="images\team\teammate2.jpg " alt="">
+          <div class="team__name">Ruth Woods</div>
+          <div class="team__prof">Founder, CEO</div>
+
+          <!-- social -->
+          <div class="social">
+            <a class="social__item" href="#" target="blank">
+              <svg class="social__icon">
+                <use xlink:href="#facebook"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="blank">
+              <svg class="social__icon">
+                <use xlink:href="#twitter"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="blank">
+              <svg class="social__icon">
+                <use xlink:href="#chat"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="blank">
+              <svg class="social__icon">
+                <use xlink:href="#basket"></use>
+              </svg>
+            </a>
+          </div><!-- /.social -->
+        </div>
+        <div class="team__item">
+          <img class="team__photo" src="images\team\teammate3.jpg " alt="">
+          <div class="team__name">Ruth Woods</div>
+          <div class="team__prof">Founder, CEO</div>
+
+          <!-- social -->
+          <div class="social">
+            <a class="social__item" href="#" target="blank">
+              <svg class="social__icon">
+                <use xlink:href="#facebook"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="blank">
+              <svg class="social__icon">
+                <use xlink:href="#twitter"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="blank">
+              <svg class="social__icon">
+                <use xlink:href="#chat"></use>
+              </svg>
+            </a>
+            <a class="social__item" href="#" target="blank">
+              <svg class="social__icon">
+                <use xlink:href="#basket"></use>
+              </svg>
+            </a>
+          </div><!-- /.social -->
+        </div>
+      </div><!-- /.team__inner -->
+      <div class="points">
+        <div class="points__blue"></div>
+        <div class="points__green"></div>
+        <div class="points__green"></div>
+      </div>
 
     </div><!-- /.container -->
-</div><!-- /.team -->
+  </div><!-- /.team -->
 
 
 
 
-<!--============== BLOG ============-->
-<div class="blog">
+  <!--============== BLOG ============-->
+  <div class="blog">
     <div class="container">
-        <div class="section__header">
-            <h2 class="section__title">Blog</h2>
-            <div class="section__text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-            </div>
+      <div class="section__header">
+        <h2 class="section__title">Blog</h2>
+        <div class="section__text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam,</p>
         </div>
+      </div>
 
-        <div class="blog__inner">
-            <div class="blog__item">
-                <div class="blog__img"><img src="images/blog/blog1.jpg" alt=""></div>
-                <div class="blog__content">
-                    <div class="blog__title">SEO Quis Vestibulum</div>
-                    <div class="blog__info">
-                        <div class="blog__data">
-                            <div class="blog__icon"><i class="far fa-calendar-alt"></i></div>
-                            <div class="blog__directionText">14.07.2017</div>
-                        </div>
-                        <div class="blog__direction">
-                            <div class="blog__icon"><i class="far fa-file"></i></div>
-                            <div class="blog__directionText">Direction</div>
-                        </div>
-                    </div>
-                    <div class="blog__text">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</div>
-                </div>
+      <div class="blog__inner">
+        <div class="blog__item">
+          <div class="blog__img"><img src="images/blog/blog1.jpg" alt=""></div>
+          <div class="blog__content">
+            <div class="blog__title">SEO Quis Vestibulum</div>
+            <div class="blog__info">
+              <div class="blog__data">
+                <div class="blog__icon"><i class="far fa-calendar-alt"></i></div>
+                <div class="blog__directionText">14.07.2017</div>
+              </div>
+              <div class="blog__direction">
+                <div class="blog__icon"><i class="far fa-file"></i></div>
+                <div class="blog__directionText">Direction</div>
+              </div>
             </div>
-            <div class="blog__item blog__invers">
-                <div class="blog__img blog__inversImg"><img src="images/blog/blog2.jpg" alt=""></div>
-                <div class="blog__content ">
-                    <div class="blog__title">SEO Quis Vestibulum</div>
-                    <div class="blog__info">
-                        <div class="blog__data">
-                            <div class="blog__icon"><i class="far fa-calendar-alt"></i></div>
-                            <div class="blog__directionText">14.07.2017</div>
-                        </div>
-                        <div class="blog__direction">
-                            <div class="blog__icon"><i class="far fa-file"></i></div>
-                            <div class="blog__directionText">Direction</div>
-                        </div>
-                    </div>
-                    <div class="blog__text">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</div>
-                </div>
-            </div>
-            <div class="blog__item">
-                <div class="blog__img"><img src="images/blog/blog3.jpg" alt=""></div>
-                <div class="blog__content">
-                    <div class="blog__title">SEO Quis Vestibulum</div>
-                    <div class="blog__info">
-                        <div class="blog__data">
-                            <div class="blog__icon"><i class="far fa-calendar-alt"></i></div>
-                            <div class="blog__directionText">14.07.2017</div>
-                        </div>
-                        <div class="blog__direction">
-                            <div class="blog__icon"><i class="far fa-file"></i></div>
-                            <div class="blog__directionText">Direction</div>
-                        </div>
-                    </div>
-                    <div class="blog__text">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</div>
-                </div>
-            </div>
-        </div><!-- /.blog__inner -->
-        <div class="blog__button">
-            <a class="blog__btn" href="#">MORE VIEV</a>
+            <div class="blog__text">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat...</div>
+          </div>
         </div>
+        <div class="blog__item blog__invers">
+          <div class="blog__img blog__inversImg"><img src="images/blog/blog2.jpg" alt=""></div>
+          <div class="blog__content ">
+            <div class="blog__title">SEO Quis Vestibulum</div>
+            <div class="blog__info">
+              <div class="blog__data">
+                <div class="blog__icon"><i class="far fa-calendar-alt"></i></div>
+                <div class="blog__directionText">14.07.2017</div>
+              </div>
+              <div class="blog__direction">
+                <div class="blog__icon"><i class="far fa-file"></i></div>
+                <div class="blog__directionText">Direction</div>
+              </div>
+            </div>
+            <div class="blog__text">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat...</div>
+          </div>
+        </div>
+        <div class="blog__item">
+          <div class="blog__img"><img src="images/blog/blog3.jpg" alt=""></div>
+          <div class="blog__content">
+            <div class="blog__title">SEO Quis Vestibulum</div>
+            <div class="blog__info">
+              <div class="blog__data">
+                <div class="blog__icon"><i class="far fa-calendar-alt"></i></div>
+                <div class="blog__directionText">14.07.2017</div>
+              </div>
+              <div class="blog__direction">
+                <div class="blog__icon"><i class="far fa-file"></i></div>
+                <div class="blog__directionText">Direction</div>
+              </div>
+            </div>
+            <div class="blog__text">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat...</div>
+          </div>
+        </div>
+      </div><!-- /.blog__inner -->
+      <div class="blog__button">
+        <a class="blog__btn" href="#">MORE VIEV</a>
+      </div>
     </div><!-- /.container -->
-</div><!-- /.blog -->
+  </div><!-- /.blog -->
 
 
 
 
-<!--============== CONTACT ============-->
-<div class="contact">
+  <!--============== CONTACT ============-->
+  <div class="contact">
     <div class="container">
-        <div class="section__header section__color">
-            <h2 class="section__title">Contect Us</h2>
-            <div class="section__text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-            </div> 
+      <div class="section__header section__color">
+        <h2 class="section__title">Contect Us</h2>
+        <div class="section__text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam,</p>
         </div>
-        <div class="contact__inner">
-            <div class="contact__item">
-                <div class="contact__icon">
-                    <svg class="contact__map">
-                        <use xlink:href="#map"></use>
-                    </svg>
-                </div>
-                <div class="contact__info">
-                    <p class="contact__p">Nobinagar savar,Dhaka</p>
-                    <p>Bangladesh</p>
-                </div>
-            </div>
-            <div class="contact__item">
-                <div class="contact__icon">
-                    <svg class="contact__map">
-                        <use xlink:href="#call"></use>
-                    </svg>
-                </div>
-                <div class="contact__info">
-                    <p class="contact__p">+8801743331996</p>
-                    <p>+8801928737807</p>
-                </div>
-            </div>
-            <div class="contact__item">
-                <div class="contact__icon">
-                    <svg class="contact__map">
-                        <use xlink:href="#email"></use>
-                    </svg>
-                </div>
-                <div class="contact__info">
-                    <p>quickmasud@gmail.com</p>
-                    <p>quickmasud@yahoo.com</p>
-                </div>
-            </div>
-        </div><!-- /.contact__inner -->
-        <form class="form" action="">
-            <div class="form__name__email">
-                <div class="form__item">
-                    <input class="form__inpun" type="text" name="name"
-                    placeholder="Your NAME" />
-                </div>
-                <div class="form__item">
-                    <input class="form__inpun" type="text" name="email"
-                    placeholder="Your Email" />
-                </div>
-            </div>
-            <textarea class="form__message" name="message" cols="150" rows="60"
-            placeholder="Write Massage"></textarea>
-            <div class="contact__button">
-                <a class="contact__btn" href="#">SEND</a>
-            </div>
-        </form>
+      </div>
+      <div class="contact__inner">
+        <div class="contact__item">
+          <div class="contact__icon">
+            <svg class="contact__map">
+              <use xlink:href="#map"></use>
+            </svg>
+          </div>
+          <div class="contact__info">
+            <p class="contact__p">Nobinagar savar,Dhaka</p>
+            <p>Bangladesh</p>
+          </div>
+        </div>
+        <div class="contact__item">
+          <div class="contact__icon">
+            <svg class="contact__map">
+              <use xlink:href="#call"></use>
+            </svg>
+          </div>
+          <div class="contact__info">
+            <p class="contact__p">+8801743331996</p>
+            <p>+8801928737807</p>
+          </div>
+        </div>
+        <div class="contact__item">
+          <div class="contact__icon">
+            <svg class="contact__map">
+              <use xlink:href="#email"></use>
+            </svg>
+          </div>
+          <div class="contact__info">
+            <p>quickmasud@gmail.com</p>
+            <p>quickmasud@yahoo.com</p>
+          </div>
+        </div>
+      </div><!-- /.contact__inner -->
+      <form class="form" action="">
+        <div class="form__name__email">
+          <div class="form__item">
+            <input class="form__inpun" type="text" name="name" placeholder="Your NAME" />
+          </div>
+          <div class="form__item">
+            <input class="form__inpun" type="text" name="email" placeholder="Your Email" />
+          </div>
+        </div>
+        <textarea class="form__message" name="message" cols="150" rows="60" placeholder="Write Massage"></textarea>
+        <div class="contact__button">
+          <a class="contact__btn" href="#">SEND</a>
+        </div>
+      </form>
     </div><!-- /.container -->
-</div><!-- /.contact -->
+  </div><!-- /.contact -->
 
-<div class="author">All rights Reserved © 2017</div>
+  <div class="author">All rights Reserved © 2017</div>
 
 
 
 
 </body>
+
 </html>
